@@ -13,17 +13,17 @@ start.addEventListener('click', (e) => {
   let addedNum = parseInt(input.value)
 
   if (isNaN(addedNum)) {
-    error.textContent = 'Add a Number'
-    error.classList.add('active')
-    return
+     return toggleErrorMsg({show:true , msg:'Enter a number '})
+  
+ 
   }
+ 
+messages({show:true})
   error.classList.remove('active')
   // circle.style.display = 'block'
   // startBox.style.display = 'none'
   timerNumber.textContent = addedNum
-  loading.style.display ="block"
-    success.style.display = 'none'
-
+  
     let originalSecond = addedNum;
   let timer = setInterval(() => {
     if (addedNum <= 0) {
@@ -32,8 +32,10 @@ start.addEventListener('click', (e) => {
        startBox.style.display = 'block'
        input.value = ''
        input.focus()
-         loading.style.display = 'none'
-         success.style.display = 'block'
+       messages({show:false})
+  
+       
+         
 return
 
     }
@@ -43,3 +45,23 @@ return
     timerNumber.textContent = addedNum
   }, 1000)
 })
+
+let toggleErrorMsg=({show, msg})=>{
+ if(show){
+     error.textContent = msg
+    error.classList.add('active')
+    return
+ }else{
+    error.classList.remove('active')
+ }
+}
+let messages =({show})=>{
+
+ if(show){
+    loading.style.display = 'block'
+     success.style.display = 'none'
+ }else{
+ success.style.display = 'block'
+   loading.style.display = 'none'
+ }
+}

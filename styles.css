@@ -55,16 +55,27 @@
 .circle {
   display: flex;
   margin: 40px;
-  padding: 40px;
+width: 100px;
+height: 100px;
   border-radius: 50%;
 
   background-color: rgb(166, 20, 151);
-  color: rgb(12, 11, 12);
+  color: rgb(198, 190, 198);
   font-size: 30px;
 }
 .timer-number{
   font-family: fantasy;
   font-weight: lighter;
+  display: flex;
+  justify-content:center ;
+
+  align-self: center;
+  position: absolute;
+   left: 0;
+  right: 0;
+
+  
+
 }
 .slice {
   background-color: blueviolet;
