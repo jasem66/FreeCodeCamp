@@ -18,7 +18,7 @@ start.addEventListener('click', (e) => {
  
   }
  
-messages({show:true})
+messages({show: true})
   error.classList.remove('active')
   // circle.style.display = 'block'
   // startBox.style.display = 'none'
